@@ -2,9 +2,13 @@
 cordova-wifi-info
 ------------------------
 
+### merged from ###
+- emcniece/cordova-plugin-wifiinfo (android part)
+- gregavola/cordova-wifi-info (ios part)
+
 Simple function for iOS only that allows you to get the SSID information from a connected device. This will only return a valid response if the user is connected to Wifi AND connected. iOS does not allow for scanning.
 
-`cordova plugin add https://github.com/gregavola/cordova-wifi-info`
+`cordova plugin add https://github.com/fwolle30/cordova-wifi-info`
 
 
 ```

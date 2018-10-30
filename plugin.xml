@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="cordova-wifi-info"
+      version="1.0.1">
+    <name>cordova-wifi-info</name>
+    <description>Cordova Wifi Info</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova</keywords>
+    <repo>https://github.com/gregavola/cordova-wifi-info</repo>
+
+    <js-module src="www/wifiinfo.js" name="WifiInfo">
+        <clobbers target="WifiInfo" />
+    </js-module>
+
+    <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="WifiInfo">
+                 <param name="ios-package" value="WifiInfoPlugin" />
+             </feature>
+         </config-file>
+
+         <header-file src="src/ios/WifiInfoPlugin.h" />
+         <source-file src="src/ios/WifiInfoPlugin.m" />
+         <framework src="SystemConfiguration.framework" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WifiInfo">
+                <param name="android-package" value="net.emcniece.cordova.WifiInfo" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/WifiInfo.java" target-dir="src/net/emcniece/cordova" />
+    </platform>    
+</plugin>

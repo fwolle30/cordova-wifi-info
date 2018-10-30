@@ -1,0 +1,53 @@
+{
+  "_from": "git+https://github.com/gregavola/cordova-wifi-info.git",
+  "_id": "cordova-wifi-info@1.0.1",
+  "_inBundle": false,
+  "_location": "/cordova-wifi-info",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/gregavola/cordova-wifi-info",
+    "rawSpec": "https://github.com/gregavola/cordova-wifi-info",
+    "saveSpec": "git+https://github.com/gregavola/cordova-wifi-info.git",
+    "fetchSpec": "https://github.com/gregavola/cordova-wifi-info.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/gregavola/cordova-wifi-info.git#67317935f067d7bbbdae593ddf3d988a3f2cc73c",
+  "_spec": "https://github.com/gregavola/cordova-wifi-info",
+  "_where": "C:\\Users\\User\\Documents\\Arbeit\\Projekte\\OctoGate App\\OctoGate BYOD",
+  "author": "",
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-wifi-info",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Wifi Info",
+  "devDependencies": {
+    "jasmine-node": "1.14.5"
+  },
+  "engines": {
+    "cordova": ">=3.0.0"
+  },
+  "homepage": "",
+  "keywords": [
+    "ecosystem:cordova",
+    "ecosystem:phonegap"
+  ],
+  "license": "MIT",
+  "name": "cordova-wifi-info",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "jasmine-node --color spec"
+  },
+  "version": "1.0.1"
+}

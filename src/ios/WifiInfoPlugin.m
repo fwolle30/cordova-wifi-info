@@ -10,12 +10,10 @@
 #include <ifaddrs.h>
 #import <net/if.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
-
-@implementation WifiInfoPlugin
-
 #import "getgateway.h"
 #import <arpa/inet.h>
 
+@implementation WifiInfoPlugin
 - (NSString *)getGatewayIP {
     NSString *ipString = nil;
     struct in_addr gatewayaddr;
@@ -28,7 +26,6 @@
     }
 
     return ipString;
-
 }
 
 - (id)fetchSSIDInfo {

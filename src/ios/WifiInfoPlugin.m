@@ -13,7 +13,9 @@
 #import "getgateway.h"
 #import <arpa/inet.h>
 
+
 @implementation WifiInfoPlugin
+
 - (NSString *)getGatewayIP {
     NSString *ipString = nil;
     struct in_addr gatewayaddr;
@@ -24,7 +26,6 @@
     } else {
         NSLog(@"getdefaultgateway() failed");
     }
-
     return ipString;
 }
 

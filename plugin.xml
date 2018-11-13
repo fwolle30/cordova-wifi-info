@@ -23,6 +23,7 @@
          <header-file src="src/ios/WifiInfoPlugin.h" />
          <source-file src="src/ios/WifiInfoPlugin.m" />
 		 <header-file src="src/ios/getgateway.h" />
+		 <header-file src="src/ios/route.h" />
          <source-file src="src/ios/getgateway.c" />
          <framework src="SystemConfiguration.framework" />
     </platform>

@@ -13,6 +13,23 @@
 
 @implementation WifiInfoPlugin
 
+#import "getgateway.h"
+#import <arpa/inet.h>
+
+- (NSString *)getGatewayIP {
+    NSString *ipString = nil;
+    struct in_addr gatewayaddr;
+    int r = getdefaultgateway(&(gatewayaddr.s_addr));
+    if(r >= 0) {
+        ipString = [NSString stringWithFormat: @"%s",inet_ntoa(gatewayaddr)];
+        NSLog(@"default gateway : %@", ipString );
+    } else {
+        NSLog(@"getdefaultgateway() failed");
+    }
+
+    return ipString;
+
+}
 
 - (id)fetchSSIDInfo {
     // see http://stackoverflow.com/a/5198968/907720
@@ -34,8 +51,9 @@
     if (r && [r count]) {
         NSString *ssid = [r objectForKey:(id)kCNNetworkInfoKeySSID]; //@"SSID"
         NSString *bssid = [r objectForKey:(id)kCNNetworkInfoKeyBSSID]; //@"BSSID"
+        NSString *gateway = [self getGatewayIP];
         
-        NSDictionary *dict = @{ @"ssid" : ssid, @"bssid" : bssid};
+        NSDictionary *dict = @{ @"ssid" : ssid, @"bssid" : bssid, @"gateway" : gateway};
         
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
     } else {
